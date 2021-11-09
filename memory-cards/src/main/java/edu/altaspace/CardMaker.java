@@ -10,6 +10,10 @@ public class CardMaker {
 
     public static final String DEFAULT_CARD_PATH = "/home/shadyfox/Documents/Philosophie/Shufle";
 
+    public static Card[] createCards(){
+        return CardMaker.createCards(DEFAULT_CARD_PATH);
+    }
+
     public static Card[] createCards(String directoryPath){
         String[] fileNamesList  = CardMaker.getFileNameList(directoryPath);
         Card[] cards = new Card[fileNamesList.length];
