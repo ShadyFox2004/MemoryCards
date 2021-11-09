@@ -28,6 +28,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card [\nname= \n" + this.getName() + "\ntext=  \n " + this.getText() + "\n]";
+        return "Card [\n\tname: " + this.getName() + "\n\ttext:  " + this.getText() + "\n]";
     }
 }
