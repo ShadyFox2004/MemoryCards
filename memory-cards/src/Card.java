@@ -1,5 +1,3 @@
-package edu.altaspace;
-
 public class Card {
 
     public Card(String name, String text) {

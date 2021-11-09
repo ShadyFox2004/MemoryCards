@@ -1,5 +1,3 @@
-package edu.altaspace;
-
 import java.util.Random;
 
 public class Main 

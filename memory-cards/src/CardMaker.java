@@ -1,5 +1,3 @@
-package edu.altaspace;
-
 import java.io.*;
 import java.util.Scanner;
 
