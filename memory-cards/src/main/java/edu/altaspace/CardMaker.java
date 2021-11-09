@@ -4,17 +4,22 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CardMaker {
-
-    public static void main(String[] args) {
-        String[] fileNamesList  = CardMaker.getFileNameList(DEFAULT_CARD_PATH);
-        for (String string : fileNamesList) {
-            String completeFileName = DEFAULT_CARD_PATH + "/" +  string;
-            System.out.println(completeFileName + ":");
-            System.out.println(CardMaker.getFileContent(completeFileName));            
-        }
+    private CardMaker(){
+        
     }
 
     public static final String DEFAULT_CARD_PATH = "/home/shadyfox/Documents/Philosophie/Shufle";
+
+    public static Card[] createCards(String directoryPath){
+        String[] fileNamesList  = CardMaker.getFileNameList(directoryPath);
+        Card[] cards = new Card[fileNamesList.length];
+        String completeFilePath;
+        for (int fileIndex = 0; fileIndex < cards.length; fileIndex++){
+            completeFilePath = directoryPath +"/"+ fileNamesList[fileIndex];
+            cards[fileIndex] = new Card(fileNamesList[fileIndex],getFileContent(completeFilePath));
+        }
+        return cards;
+    } 
 
     public static String getFileContent(String cardPath) {
         String fileContent = "";
